@@ -1,0 +1,72 @@
+h1 {
+    /* text-align: start; */
+    text-align: center;
+    /* text-align: end; */
+    font-weight: 400;
+    text-decoration: underline blue;
+}
+
+p{
+    /* text-align: center; */
+    text-align: justify;
+    font-weight: 400;
+    line-height: 1.5;
+    /* letter-spacing: -1px; */
+    letter-spacing: 1px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+h2{
+    font-weight: 900;
+    text-decoration: underline dotted red;
+    /* font-weight: bold; */
+    /* font-weight: bolder; */
+    /* font-weight: lighter; */
+    /* font-weight: 100-400 normal, 500-700 bold, 800-900 bolder; */
+}
+
+h3{
+    font-size: 200%;
+}
+/* 
+font-size: ; 
+Relative  : untuk website responsive, ukuran mengikuti ukuran layar, 
+menggunakan satuan em, rem, vw, vh, vmin, vmax, % 
+Absolute : untuk ukuran tetap, tidak mengikuti ukuran layar 
+menggunakan satuan px, cm, mm, in, pt, pc
+
+<absolute-size> values
+font-size: xx-small;
+font-size: x-small;
+font-size: small;
+font-size: medium;
+font-size: large;
+font-size: x-large;
+font-size: xx-large;
+font-size: xxx-large;
+
+<relative-size> values
+font-size: smaller;
+font-size: larger;
+
+<length> values
+font-size: 12px; (paling umum digunakan untuk absolute)
+font-size: 0.8em;
+
+<percentage> values
+font-size: 80% (paling umum digunakan untuk Relative;
+
+math value 
+font-size: math;
+
+Global values
+font-size: inherit;
+font-size: initial;
+font-size: revert;
+font-size: revert-layer;
+font-size: unset; 
+*/ 

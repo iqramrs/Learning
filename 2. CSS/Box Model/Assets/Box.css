@@ -1,0 +1,54 @@
+/* 
+Margin adalah jarak diluar border.
+padding adalah jarak didalam border.
+*/
+#box2{
+    width: 400px;
+    padding: 20px;
+    border: 3px solid black;
+}
+
+/* border style */
+#box2{
+    /*inline style mulai dari top|right|bottom|left*/
+    border-style: dotted dashed solid double;
+    border-width: 5px 10px 15px 20px;
+    border-color: green;
+}
+
+#box1{
+    width: 400px;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+#box3{
+    width: 300px;
+    border: 2px solid black;
+/* style dibawah| vertikal|horizontal */
+    padding: 30px 10px;
+}
+
+/* margin jarak diluar border */
+div{
+    margin: 20px 50px;
+}
+
+/* 
+display adalah cara menampilkan elemen
+contohnya inline|block|inline-block|flex|grid|table|table-cell|table-row|tabl
+*/
+h1{
+    background-color: aqua;
+    border: 2px solid black;
+    margin: 0px 50px;
+    padding: 0px 100px;
+    display: inline-block;
+    /* untuk menghilangkan konten bukan menghapus */
+    /* display: none; */
+}
+
+span{
+    background-color: lightgrey;
+    border: 2px solid black;
+}

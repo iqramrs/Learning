@@ -1,0 +1,57 @@
+h1{
+    text-align: center;
+}
+
+#container{
+    background-color: #003049;
+    width: 90%;
+    /* height: 500px; */
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction: row;
+    /* justify content untuk mengatur secara horizontal */
+    /* justify-content: space-around; */
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    /* align items untuk mengatur secara vertikal */
+    align-items: center;
+    /* align-content: center; */
+
+}
+
+#container div{
+    width: 200px;
+    height: 200px;
+    flex-basis: 400;
+}
+
+div:nth-of-type(1){
+    /* flex-grow: 1; */
+    flex-shrink: 2;
+}
+div:nth-of-type(5){
+    flex-shrink: 2;
+}
+
+/* div:nth-of-type(3){
+    align-self: flex-start;
+} */
+
+main{
+    border: 5px solid black;
+    width: 80%;
+    margin: 0 auto;
+    height: 500px;
+    display: flex;
+}
+
+main .sidebar{
+    background-color: #003049;
+    flex: 1 2 200px;
+}
+
+main .content{
+    background-color: aliceblue;
+    flex: 2 1 800px;
+}

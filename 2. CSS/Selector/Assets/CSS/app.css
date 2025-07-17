@@ -1,0 +1,121 @@
+/* Universal selector*/
+/* * {
+    background-color: #D4EBF8;
+} */
+
+h1, h2, h3{
+    background-color: #E38E49;
+    color: black;
+}
+
+/* Atribut ID menggunakan tanda # */
+#list2{
+    color: black;
+}
+#list3 {
+    color: white;
+}
+
+/* Atribut Class menggunakan tanda . */
+.mark{
+    background-color: yellow;
+}
+
+.newsection{
+    background-color: wheat;
+}
+
+/* descendant selector  */
+/* .newdes p{
+    font-size: 14px;
+    color: green;
+} */
+
+/* direct descendant selector 
+memungkinkan untuk  memilih elemen yang merupakan anak langsung dari elemen
+menggunakan tanda ">" dan bisa menggunakan atribut class atau id */
+.newdes > p{
+    font-size: 14px;
+    color: green;
+}
+
+/* Ajdacent Selector 
+memilih elemen yang berada di sebelum atau sesudah dan bisa menggunakan atribut class atau id
+*/
+a + button{
+    background-color: gray;
+}
+
+/* attribute selector
+memilih elemen dengan atribut tertentu
+<a> elements with a title attribute
+a[title] {
+    color: purple;
+  } 
+<a> elements with an href matching "https://example.org"
+  a[href="https://example.org"]
+  {
+    color: green;
+  }
+  
+<a> elements with an href containing "example"
+  a[href*="example"] {
+    font-size: 2em;
+  }
+  
+<a> elements with an href ending ".org", case-insensitive
+  a[href$=".org" i] {
+    font-style: italic;
+  }
+  
+<a> elements whose class attribute contains the word "logo"
+  a[class~="logo"] {
+    padding: 2px;
+  }
+*/
+input[type = "text"]{
+    color: red;
+}
+input[type = "password"]{
+    color: green;
+}
+
+/* Psuedo classes
+kata kunci yang ditambahkan pada selector untuk memilih element secara spesifik
+pada kondisi tertentu
+contohnya :hover, :focus, :active, :visited, :link, :first-child, :
+*/
+
+.newdes > p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+ section button:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+/* bisa menggunakan nth-of-type() untuk start dari atas dan menambahkan nth-last- untuk start dari bawah 
+untuk value didalam bisa dimulai dari 1 dst dan untuk kelipatan menggunakan 2n yang berati setiap kelipatan 2 akan dikenakan
+*/
+section:nth-of-type(2n){
+    background-color: gray;
+}
+
+/* psuedo elements
+kata kunci yang ditambahkan pada selector untuk memilih bagian element yang dipilih
+contohnya ::before, ::after, ::first-letter, ::first-line, ::selection
+*/
+
+section h3::first-letter{
+    font-size: x-large;
+}
+
+section h3::first-line{
+    color: red ;
+}
+
+section h3::after{
+    content: '#';
+}

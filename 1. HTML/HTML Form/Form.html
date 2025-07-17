@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <!-- method="get" berguna  untuk mengirim data ke server dengan menggunakan metode GET contohnya  ketika kita ingin mengirim data ke server dengan menggunakan url. seperti membuat search  di google.  -->
+    <!-- method="post" lebih aman untuk membuat  form login atau form registrasi karena data tidak akan terlihat di url -->
+
+    <form action="#" method="post">
+        <div>
+            <label for="name">Nama :</label>
+            <input type="text" placeholder="Nama" id="name" name="name">
+        </div>
+        <div>
+            <label for="email">Email :</label>
+            <input type="email" placeholder="Email" id="email" name="email">
+        </div>
+        <div>
+            <label for="pass">Password :</label>
+            <input type="password" placeholder="Password" id="pass" name="pass">
+        </div>
+        <div>
+            <label for="phone">Phone :</label>
+            <input type="phone" placeholder="Phone" id="phone" name="phone">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <br><br>
+
+    <h1>Radio Button</h1>
+    <form action="/Pesanan">
+        <label for="">Pilih Baju</label>
+        <div>
+            <input type="radio" name="Baju" id="" value="kaos" checked><label for="">Kaos</label>
+            <input type="radio" name="Baju" id="" value="kemeja"><label for="">Kemeja</label>
+        </div>
+        <div>
+            <select name="size" id="size">
+                <option value="">--Pilih salah satu--</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+        </div>
+        <div>
+            <label for="term">Sudah sesuai?</label>
+            <input type="checkbox" name="term" id="term" value="benar">
+        </div>
+        <div>
+            <p>
+                <label for="notes">Catatan</label>
+            </p>
+            <textarea name="notes" id="notes" cols="50" rows="5"></textarea>
+        </div>
+        <button  type="submit">Order</button>
+
+    </form>
+</body>
+</html>
