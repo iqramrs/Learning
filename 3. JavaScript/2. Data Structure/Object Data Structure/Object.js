@@ -12,7 +12,7 @@
 // const Person = {
 //   name: "Iqram",
 //   age: "22",
-//   addres: "Jakarta",
+//   address: "Jakarta",
 // };
 // const Stuff = {
 //   object: "Shoes",
@@ -43,6 +43,17 @@
 // Person.isMarried = true;
 // console.log(Person.isMarried);
 // console.log(Person);
+// # Awal: { name: 'Iqram', age: '22', addres: 'Jakarta' }
+// # Setelah Tambah: { name: 'Iqram', age: '22', addres: 'Jakarta', isMarried: true }
+// # Properti isMarried ditambah di akhir objek.
+
+// // Menghapus dari object
+// delete Person.isMarried;
+// console.log(Person);
+// console.log(Person.isMarried); // undefined
+// # Awal: { name: 'Iqram', age: '22', addres: 'Jakarta', isMarried: true }
+// # Setelah Hapus: { name: 'Iqram', age: '22', addres: 'Jakarta' }
+
 
 // Array + Object
 // Example 1

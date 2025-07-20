@@ -58,26 +58,39 @@
 // months.splice(1, 0, "Feb");
 // console.log(months);
 // months.splice(4, 2, "May");
-// console.log(months);
+// Array sebelum: ["jan", "Feb", "mar", "april", "jun", "jul", "aug"]
+// # Mulai dari indeks 4 (jun)
+// # Hapus 2 elemen (indeks 4 dan 5).
+//    Hapus jun (indeks 4) dan jul (indeks 5).
+// # Tambah "May" di indeks 4.
+// # Elemen sisanya (mulai aug) geser ke kanan.
+// # Hasil: ["jan", "Feb", "mar", "april", "May", "aug"]
 
-// Slice untuk menghapus data pada array sesuai index
+// Slice adalah method array buat ngambil sebagian elemen dan bikin array baru, tanpa mengubah array asli.
+// Array tidakl diubah langsung oleh slice, karena slice membuat salinan array baru.
+// # Sintaks: array.slice(start, end) (opsional end).
+// # start: Indeks mulai (inclusive).
+// # end: Indeks akhir (exclusive), kalau nggak ditulis, ambil sampai akhir.
 const animals = ["ant", "bison", "camel", "duck", "elephant"];
-console.log(animals.slice(2));
-console.log(animals.slice(2, 4));
-console.log(animals.slice(3, -1));
+console.log(animals.slice(2)); // Mengambil elemen dari indeks 2 sampai akhir
+console.log(animals.slice(2, 4)); // Mengambil elemen dari indeks 2 sampai sebelum indeks 4
+console.log(animals.slice(3, -1)); // Mengambil elemen dari indeks 3 sampai sebelum indeks terakhir
+console.log(animals); // Tetap ["ant", "bison", "camel", "duck", "elephant"]
 
-// reverse untuk mengubah urutan data pada array
+// reverse adalah method array yang membalik urutan elemen dan mengubah array asli.
+// Setelah dibalik, elemen pertama jadi terakhir, dan terakhir jadi pertama.
 let number = [1, 2, 3, 4, 5];
 console.log('Before :', number);
 // console.log(number.reverse());
 const reversed = number.reverse();
 console.log('After :', reversed);
 
-// join untuk mengubah array menjadi string
+// join adalah method array yang menggabungkan semua elemen array jadi satu string, dengan pemisah (separator) yang bisa kamu tentuin.
+// Kalau nggak ditentuin separator, defaultnya pakai koma (,)
 const elements = ['Fire', 'Air', 'Water'];
-console.log(elements.join());
-console.log(elements.join(' '));
-console.log(elements.join('-'));
+console.log(elements.join()); // "Fire,Air,Water"
+console.log(elements.join(' ')); // "Fire Air Water"
+console.log(elements.join('-')); // "Fire-Air-Water"
 // ------------------------------------------------------------//
 
 // mengubah nilai const dengan array
@@ -85,6 +98,7 @@ const vehicle = ["Bike", "Car", "Truck"];
 console.log(vehicle);
 vehicle.push('Airplane');
 console.log(vehicle);
+// push bisa digunakan untuk menambahkan elemen baru ke dalam array yang sudah ada, meskipun array tersebut dideklarasikan dengan const.
 
 // nested array
 const board = [
