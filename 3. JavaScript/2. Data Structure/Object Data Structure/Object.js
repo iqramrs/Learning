@@ -95,3 +95,19 @@ for (let i = 0; i < shoppingCart.length; i++) {
     console.log(`   ${row[j]}`);
   }
 }
+
+
+// Destructing object, extract only title, price, and category in one line.
+// const product = {
+//     id: 1,
+//     title: "Laptop",
+//     price: 15000000,
+//     stock: 10,
+//     category: "Electronics"
+// };
+
+// const {title, price, category} = product;
+
+// console.log(title);
+// console.log(price);
+// console.log(category);
