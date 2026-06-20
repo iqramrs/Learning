@@ -169,3 +169,35 @@ class Anjing extends Hewan {
 const kucing1 = new Kucing("Mimi", 2, 9);
 const anjing1 = new Anjing("Buddy", 3);
 
+class Animal{
+  constructor(name){
+    this.name = name;
+  }
+  
+  makeSound(){
+    return `Some generic animal sound`;
+  }
+}
+
+class Dog extends Animal{
+  constructor(name,age){
+    super(name);
+    this.age=age;
+  }
+  
+  makeSound(){
+  return `Woof! Woof!` 
+  }
+}
+
+class Cat extends Animal{
+  makeSound(){
+    return`Meow!`
+  }
+}
+
+const animals = [new Dog("Buddy", 4), new Cat("Whiskers")];
+
+for (const animal of animals) {
+  console.log(animal.makeSound());
+}
