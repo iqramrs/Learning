@@ -152,7 +152,7 @@ class Kucing extends Hewan {
   // child class
   constructor(nama, usia, lives) {
     super(nama, usia); // memanggil constructor parent class
-    this.lives = lives;
+    this.lives = lives; // menambahkan property lives pada child class
   }
   meong() {
     return `${this.nama} mengeluarkan suara: Meong!`;
