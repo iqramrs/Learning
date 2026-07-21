@@ -93,3 +93,54 @@ async function requestHandler() {
     console.log(error);
   }
 }
+
+
+// Challenge 1
+/*
+Write an async function called getPost that:
+Fetches data from https://jsonplaceholder.typicode.com/posts/1 (this is a real free API)
+Converts the response to JSON
+Logs the title property of the returned post
+Handles errors with try/catch — if something goes wrong, log "Something went wrong: " followed by the error message
+*/
+
+async function getPost() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    const data = await response.json();
+    console.log(data.title);
+  } catch (error) {
+    console.log(`Something went wrong: ${error.message}`);
+  }
+}
+
+getPost();
+
+// challenge 2
+/*
+Requirements:
+Write an async function called getPosts that:
+Fetches all posts from https://jsonplaceholder.typicode.com/posts
+Filters only posts where userId === 1
+Returns an array of just their titles
+Logs the total count like: "Found 10 posts from user 1"
+Logs each title on a separate line
+Handles errors with try/catch
+*/
+
+async function getTitles() {
+  try{
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const data = await response.json();
+    const userPosts  = data.filter((users) => users.userId === 1);
+    const postTitles = userPosts.map((users) => users.title)
+    console.log(`Found ${postTitles.length} posts from user 1`)
+    for(const title of postTitles ){
+      console.log(title)
+    }
+  } catch (error){
+    console.log(`Something went wrong: ${error.message}`);
+  }
+}
+
+getTitles()
