@@ -33,11 +33,19 @@
 // document.querySelector('h1.square')
 
 // jika ingin memilih semua element yang sesuai dengan selector CSS, gunakan querySelectorAll. Method ini akan mengembalikan NodeList yang berisi semua element yang sesuai dengan selector yang diberikan.
-// const links = document.querySelectorAll('a');
-// for (let link of links) {
-// 	link.style.color = 'rgb(0, 108, 134)';
-// 	link.style.textDecorationColor = 'magenta';
-// 	link.style.textDecorationStyle = 'wavy';
+
+// const allLinks = document.querySelectorAll('p a');
+// for (let link of allLinks) {
+//     link.innerText = 'I AM A LINK!';
 // }
 
+// STYLING WITH DOM 
+const heading = document.querySelector('h1');
+// heading.style.color = 'red';
 
+const links = document.querySelectorAll('a');
+for (let link of links) {
+	link.style.color = 'green';
+	link.style.textDecorationColor = 'magenta';
+	link.style.textDecorationStyle = 'wavy';
+}
