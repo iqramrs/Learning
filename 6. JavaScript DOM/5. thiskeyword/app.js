@@ -6,6 +6,12 @@ const generateRandomColor = () => {
 	return `rgb(${r}, ${g}, ${b})`;
 };
 
+// this disini berarti element yang sedang di klik, misal button atau heading
+function colorize() {
+	this.style.backgroundColor = generateRandomColor();
+	this.style.color = generateRandomColor();
+}
+
 const buttons = document.querySelectorAll('button');
 
 for (let button of buttons) {
@@ -18,7 +24,3 @@ for (let heading of headings) {
 	heading.addEventListener('click', colorize);
 }
 
-function colorize() {
-	this.style.backgroundColor = generateRandomColor();
-	this.style.color = generateRandomColor();
-}
