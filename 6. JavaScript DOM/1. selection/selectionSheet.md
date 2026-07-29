@@ -300,6 +300,7 @@ div.textContent = "Belajar DOM";
 `innerHTML` digunakan untuk membaca atau mengubah isi HTML di dalam suatu elemen.
 
 Berbeda dengan `innerText`, property ini dapat membuat tag HTML baru.
+RULE: Use `textContent` when displaying user input. Only use `innerHTML` when YOU control the content.
 
 ## Kegunaan
 
