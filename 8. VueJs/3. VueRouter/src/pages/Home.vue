@@ -7,6 +7,7 @@ import { RouterLink } from "vue-router";
     <div>
         <h1>Home</h1>
         <p>Welcome to the home page!</p>
+        <p>Check out our latest products:</p>
         <ul>
             <li v-for="product in products" :key="product.id">
                 <RouterLink :to="`/products/${product.id}`">{{
