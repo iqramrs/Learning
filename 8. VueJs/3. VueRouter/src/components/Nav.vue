@@ -25,5 +25,6 @@ div{
     padding: 5px 10px;
     border-radius: 5px;
     text-decoration: none;
+    pointer-events: none;
 }
 </style>

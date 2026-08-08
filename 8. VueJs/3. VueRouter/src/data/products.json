@@ -4,34 +4,54 @@
         "name": "Laptop",
         "price": 10.99,
         "year": 2023,
-        "description": "This is product 1"
+        "description": "This is product 1",
+        "owner": {
+            "name": "John Doe",
+            "email": "john.doe@example.com"
+        }
     },
     {
         "id": 2,
         "name": "Smartphone",
         "price": 19.99,
         "year": 2022,
-        "description": "This is product 2"
+        "description": "This is product 2",
+        "owner": {
+            "name": "Jane Smith",
+            "email": "jane.smith@example.com"
+        }
     },
     {
         "id": 3,
         "name": "Tablet",
         "price": 5.99,
         "year": 2021,
-        "description": "This is product 3"
+        "description": "This is product 3",
+        "owner": {
+            "name": "Bob Johnson",
+            "email": "bob.johnson@example.com"
+        }
     },
     {
         "id": 4,
         "name": "Headphones",
         "price": 15.99,
         "year": 2020,
-        "description": "This is product 4"
+        "description": "This is product 4",
+        "owner": {
+            "name": "Alice Brown",
+            "email": "alice.brown@example.com"
+        }
     },
     {
         "id": 5,
         "name": "Smartwatch",
         "price": 25.99,
         "year": 2019,
-        "description": "This is product 5"
+        "description": "This is product 5",
+        "owner": {
+            "name": "Charlie Wilson",
+            "email": "charlie.wilson@example.com"
+        }
     }
 ]

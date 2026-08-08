@@ -13,6 +13,13 @@ const router = createRouter({
             path: '/products/:id',
             name: 'product',
             component: () => import('../pages/Product.vue'),
+            children: [
+                {
+                    path: 'owner',
+                    name: 'owner',
+                    component: () => import('../pages/Owner.vue')
+                }
+            ]
         },
         {
             path: '/about',
