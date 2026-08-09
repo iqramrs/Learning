@@ -16,7 +16,7 @@ function showOwner() {
 </script>
 
 <template>
-    <div>
+    <div v-if="product">
         <h1>Product Details</h1>
         <div>
             <p>Name: {{ product.name }}</p>
@@ -24,8 +24,12 @@ function showOwner() {
             <p>Year: {{ product.year }}</p>
             <p>Price: ${{ product.price }}</p>
         </div>
-        <button @click="showOwner">Show Owner</button>
+        <br>
+        <button @click="showOwner">Owner Details</button>
         <RouterView />
+    </div>
+    <div v-else>
+        <h2>Product not found.</h2>
     </div>
 </template>
 
