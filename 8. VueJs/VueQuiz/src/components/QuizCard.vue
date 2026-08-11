@@ -1,11 +1,18 @@
 <script setup>
+import { defineProps } from "vue";
+import { useRouter } from "vue-router";
 // defineProps digunakan untuk mendefinisikan props yang diterima oleh component
 // menggunakan constructor function defineProps, kita bisa mendefinisikan props yang diterima oleh component
     const { quiz } = defineProps(['quiz'])
+    const rourter = useRouter()
+
+function goToQuiz() {
+    rourter.push({ name: 'quiz', params: { id: quiz.id } })
+}
 </script>
 
 <template>
-    <div class="card">
+    <div class="card" @click="goToQuiz">
         <img :src="quiz.img" :alt="quiz.title" />
         <div class="card-body">
             <h2>{{ quiz.title }}</h2>
@@ -22,6 +29,7 @@
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0px 0px 5px #0000004d;
+    cursor: pointer;
 }
 
 .card img {
