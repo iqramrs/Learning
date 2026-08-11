@@ -4,10 +4,10 @@ import { useRouter } from "vue-router";
 // defineProps digunakan untuk mendefinisikan props yang diterima oleh component
 // menggunakan constructor function defineProps, kita bisa mendefinisikan props yang diterima oleh component
     const { quiz } = defineProps(['quiz'])
-    const rourter = useRouter()
+    const router = useRouter()
 
 function goToQuiz() {
-    rourter.push({ name: 'quiz', params: { id: quiz.id } })
+    router.push({ name: 'quiz', params: { id: quiz.id } })
 }
 </script>
 

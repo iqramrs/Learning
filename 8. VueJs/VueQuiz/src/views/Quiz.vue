@@ -1,42 +1,54 @@
+<script setup>
+import QuizHeader from "@/components/QuizHeader.vue";
+import QuizContent from "@/components/QuizContent.vue";
+import { computed, ref } from "vue";
+import { useRoute } from "vue-router";
+import quizes from "../data/quizes.json";
+import QuizResult from "@/components/QuizResult.vue";
+
+const route = useRoute();
+const quizId = parseInt(route.params.id);
+const quiz = quizes.find((quiz) => quiz.id === quizId);
+
+const numberOfCorrectAnswers = ref(0);
+const currentQuestionIndex = ref(0);
+const showResult = ref(false);
+
+const questionPage = computed(() => {
+    return `${currentQuestionIndex.value + 1} of ${quiz.questions.length}`;
+});
+const barProgressWidth = computed(() => {
+    return `${((currentQuestionIndex.value + 1) / quiz.questions.length) * 100}%`;
+});
+
+function handleAnswerSelect(answers) {
+    if (answers.correct === true) {
+        numberOfCorrectAnswers.value++;
+    }
+    if (currentQuestionIndex.value === quiz.questions.length - 1) {
+        showResult.value = true;
+        return;
+    }
+    currentQuestionIndex.value++;
+}
+</script>
+
 <template>
-    <header>
-        <h4>Question 1</h4>
-        <div class="bar">
-            <div class="bar-progress"></div>
-        </div>
-    </header>
-    <section id="question-container">
-        <h2>What is the capital of France?</h2>
-    </section>
-    <section id="answer-container">
-        <div class="option">
-            <p class="option-label">A.</p>
-            <div class="option-value">Paris</div>
-        </div>
-        <div class="option">
-            <p class="option-label">B.</p>
-            <div class="option-value">London</div>
-        </div>
-        <div class="option">
-            <p class="option-label">C.</p>
-            <div class="option-value">Berlin</div>
-        </div>
-    </section>
+    <QuizHeader
+        v-if="!showResult"
+        :questionPage="questionPage"
+        :barProgressWidth="barProgressWidth"
+    />
+    <QuizContent
+        v-if="!showResult"
+        :question="quiz.questions[currentQuestionIndex]"
+        @answerSelected="handleAnswerSelect"
+    />
+    <QuizResult
+        v-else
+        :quizlength="quiz.questions.length"
+        :numberOfCorrectAnswers="numberOfCorrectAnswers"
+    />
 </template>
 
-<style scoped>
-header {
-    margin-top: 30px;
-}
-
-header h4 {
-    font-size: 30px;
-}
-
-.bar{
-    width: 100%;
-    height: 10px;
-    background-color: #c9c9c9a8;
-    border-radius: 5px;
-}
-</style>
+<style scoped></style>
