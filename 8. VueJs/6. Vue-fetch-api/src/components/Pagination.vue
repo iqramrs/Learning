@@ -1,9 +1,11 @@
 <script setup>
-const { page, totalPages } = defineProps({
+const props = defineProps({
     page: Number,
     totalPages: Number,
 });
+
 const emit = defineEmits(["changePage"]);
+
 function changePage(newPage) {
     emit("changePage", newPage);
 }
@@ -11,17 +13,15 @@ function changePage(newPage) {
 
 <template>
     <button
-        class="pagination-button"
-        id="prevPage"
-        @click="emit('changePage', page - 1)"
+        class="pagination-button" id="prev-button"
+        @click="changePage(page - 1)"
     >
         &lt;
     </button>
 	<span>{{ page }} / {{ totalPages }}</span>
     <button
-        class="pagination-button"
-        id="nextPage"
-        @click="emit('changePage', page + 1)"
+        class="pagination-button" id="next-button"
+        @click="changePage(page + 1)"
     >
         &gt;
     </button>

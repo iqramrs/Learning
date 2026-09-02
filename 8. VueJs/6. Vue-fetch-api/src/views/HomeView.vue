@@ -1,19 +1,32 @@
 <script setup>
 import ProductCard from "@/components/Product.vue";
 import Pagination from "@/components/Pagination.vue";
+import Loading from "@/components/Loading.vue";
 
-import { ref, watch, onMounted } from "vue";
+import { ref, watchEffect } from "vue";
 import axios from "axios";
 
 const products = ref([]);
 const page = ref(1);
 const limit = ref(12);
-const API_URL =
-    `http://localhost:3000/products?_page=${page.value}&_per_page=${limit.value}`;
+const isLoading = ref(true);
 
-onMounted(async () => {
-    products.value = await axios.get(API_URL).then((res) => res.data);
-    // console.log(products.value);
+
+async function fetchProducts() {
+    isLoading.value = true;
+    const API_URL = `http://localhost:3000/products?_page=${page.value}&_per_page=${limit.value}`;
+    try {
+        const response = await axios.get(API_URL);
+        products.value = response.data;
+    } catch (error) {
+        console.error("Error fetching products:", error);
+    } finally {
+        isLoading.value = false;
+    }
+}
+
+watchEffect(() => {
+    fetchProducts();
 });
 
 function changePage(newPage) {
@@ -21,23 +34,13 @@ function changePage(newPage) {
     if (newPage > products.value.pages) return;
     page.value = newPage;
 }
-
-watch(page, async () => {
-    products.value = await axios.get(API_URL).then((res) => res.data);
-});
-// const fetchProducts = async () => {
-//     try {
-//         const response = await axios.get("http://localhost:3000/products");
-//         products.value = response.data;
-//     } catch (error) {
-//         console.error("Error fetching products:", error);
-//     }
-// };
-// fetchProducts();
 </script>
 
 <template>
-    <main>
+    <div v-if="isLoading">
+        <Loading />
+    </div>
+    <main v-else>
         <div class="product-grid">
             <ProductCard
                 v-for="product in products.data"
